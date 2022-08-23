@@ -1,0 +1,30 @@
+<div class="oneZone" *ngIf="valCommandes.length!=0">
+    <div class="zone-text container">
+        <h2 (click)="seeCommande()"> {{zone.nom}} (prix livraison: {{zone.prixLivraison}} FCFA) </h2>
+        <h2 (click)="catchCommande()">X</h2>
+    </div>
+    <div class="zone-commandes" *ngIf="test">
+
+        <table class="table container">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Choisir commande</th>
+                    <th scope="col">Prix commande</th>
+                    <th scope="col">Client</th>
+                    <th scope="col">Date</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let commande of zone.commandes;let i=index">
+                <tr *ngIf="commande.etat=='valide'">
+                    <td>{{i+1}}</td>
+                    <td><input type="checkbox" id="{{commande.id}}" #input (input)="isChecked($event,input)"></td>
+                    <td>{{commande.prixTotal}} FCFA</td>
+                    <td>{{commande.client.phoneNumber}}</td>
+                    <td>{{commande.date | date:'M/d/yy, h:mm a' }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-warning delivery" *ngIf="allCommandes.length!==0" (click)="addLivraison()">Livrer</button>
+    </div>
+</div>

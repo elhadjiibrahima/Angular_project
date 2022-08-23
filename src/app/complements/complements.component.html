@@ -1,0 +1,26 @@
+
+<h3>Complements</h3>
+<h4>Boissons</h4>
+<div class="allTailles" *ngFor="let tailleBoisson of tailleBoissons">
+  <h5>{{tailleBoisson.Libelle}}</h5>
+  <div class="complements-container">
+    <div class="complements" *ngFor="let varieteTaille of tailleBoisson.varieteTailles">
+      <div class="complement">
+        <h5 class="text-center">{{varieteTaille.boisson.nom}}</h5>
+        <img [src]="transform(varieteTaille.boisson.photo)" alt="">
+        <input type="checkbox" name="" id="">
+      </div>
+    </div>
+  </div>
+</div>
+<h4>Frites</h4>
+<div class="complements-container">
+  <div class="complements" *ngFor="let frites of allFrites">
+    <div class="complement">
+      <h5  class="text-center">{{frites.nom}}</h5>
+      <h5 class="text-center">{{frites.prix}} FCFA</h5>
+      <img [src]="transform(frites.photo)" alt="">
+      <input type="checkbox" name="" id="">
+    </div>
+  </div>
+</div>

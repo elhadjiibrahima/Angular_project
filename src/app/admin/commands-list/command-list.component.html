@@ -1,0 +1,24 @@
+<h3>Choisir la date</h3>
+<input type="date" name="" id=""  max="{{date}}" [(ngModel)]='date'>
+<table class="table container">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Reference</th>
+        <th scope="col">Date</th>
+        <th scope="col">Etat</th>
+        <th scope="col">Client</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let commande of commandes |filter:date;let i=index">
+        <td>{{i+1}}</td>
+        <td>{{commande.numeroCommande}}</td>
+        <td>{{commande.date | date:'HH:mm' }}</td>
+        <td>{{commande.etat}}</td>
+        <td>{{commande.client.phoneNumber}}</td>
+        <td class="butts"><button class="btn btn-success"  *ngIf="commande.etat=='en cours'" (click)="modifyCommande(commande)">Valider</button> <button class="btn btn-danger" *ngIf="commande.etat=='valide' || commande.etat=='en cours de livraison'" (click)="modifyCommande(commande)">Annuler</button> <button class="btn btn-info" (click)="detailCommande(commande)">Details</button></td>
+      </tr>
+    </tbody>
+  </table>

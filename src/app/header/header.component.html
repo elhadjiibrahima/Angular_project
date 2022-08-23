@@ -1,0 +1,28 @@
+<div class="header-container">
+    <img src="assets/brazillogo.png" routerLink="" style="cursor: pointer;">
+    <div class="icons-contain">
+        <div class="commandList"  style="cursor: pointer;" routerLink="client/4/commandes">
+            <i class="bi bi-terminal-fill"></i>
+            <p class="p-header">Mes commandes</p>
+        </div>
+        <div class="basket" (click)="goToBasket()" style="cursor: pointer;">
+            <i class="bi bi-cart4"></i>
+            <p class="p-header">Panier</p>
+            <i class="fas fa-shopping-cart fs-3 basket-comp d-flex align-items-center justify-content-center">
+                <span class="span-header"> {{(productItem | async).length}} </span>
+            </i>
+        </div>
+        <div class="admin" style="cursor: pointer;" routerLink="admins">
+            <i class="bi bi-person-lines-fill"></i>
+            <p class="p-header">Admin</p>
+        </div>
+        <div class="authentication">
+            <i class="bi bi-person-plus-fill"></i>
+            <p class="p-header">S'inscrire</p>
+        </div>
+        <div class="authentication">
+            <i class="bi bi-person-circle"></i>
+            <p class="p-header">Se connecter</p>
+        </div>
+    </div>
+</div>

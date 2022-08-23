@@ -1,0 +1,58 @@
+.f-contain{
+    width: 50vw;
+    height: fit-content;
+    margin-top: 15vh;
+    background-color: var(--primary);
+    border: solid 1px;
+}
+.f-contain h2{
+    margin-bottom: 3vh;
+}
+.f-contain form{
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+}
+
+.form-page{
+    border: 1px solid;
+    margin-top: 10vh;
+    height: fit-content;
+    background-image: url(../../../assets/burg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.img-contain{
+    position: relative;
+    height: 250px; 
+    width:320px;
+    background: #485563;  
+    background: -webkit-linear-gradient(to right, #29323c, #485563);  
+    background: linear-gradient(to right, #29323c, #485563);
+    color: var(--primary);
+}
+.choose-img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+}
+.img-contain img{
+    width: 300px;
+    height: 200px;
+    margin-top: 25px;
+}
+.modif-img{
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    cursor: pointer;
+}
+.img-contain label:hover{
+    color: orangered;
+}
+.file-input{
+    display: none;
+}

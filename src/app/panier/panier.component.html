@@ -1,0 +1,21 @@
+<section class="h-100" style="background-color: var(--primary);">
+  <div class="container h-100 py-5">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-10">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h3 class="fw-normal mb-0" style="color: var(--tercary);">Panier</h3>
+        </div>
+        <app-panier-card *ngFor="let produit of (productItem | async)" [produit]="produit"></app-panier-card>
+      </div>
+    </div>
+    <div class="butts">
+      <button (click)="surPlace()" *ngIf="(productItem | async)?.length!=0">Sur place</button>
+      <button (click)="aLivrer()" *ngIf="(productItem | async)?.length!=0">A livrer</button>
+    </div>
+    <div *ngFor="let zone of zones" class="zones">
+      <div class="zone" *ngIf="liv">
+        <input type="radio" #input name="checkedZone" id="{{zone.id}}" (input)="choosenZone(input)">
+        <label for="{{zone.id}}">{{zone.nom}}: <p *ngFor="let quartier of zone.quartier"> {{quartier.nom}} </p></label>
+      </div>
+    </div>
+    <button class="container-fluid ptpanier" (click)="postCommande(input)" [disabled]="!test" *ngIf="(productItem | async)?.length!=0">Commander ({{sum+(pl)}} FCFA)</button>

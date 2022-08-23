@@ -1,0 +1,18 @@
+.all-livreurs{
+    margin-top: 15vh;
+}
+.butts{
+    display: flex;
+    justify-content: space-around;
+}
+.form-control{
+    width: 30vw;
+    margin-top: 5vh;
+    background-color: var(--tercary);
+    color: var(--primary);
+}
+table{
+    margin-top: 20vh;
+    background-color: var(--tercary);
+    color: var(--primary);
+}

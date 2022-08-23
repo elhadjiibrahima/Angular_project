@@ -1,0 +1,11 @@
+.admin-actions{
+    margin-top: 30vh;
+    display: flex;
+    flex-direction: column;
+}
+h2{
+    cursor: pointer;
+}
+h2:hover{
+    color: rgb(0, 0, 255);
+}

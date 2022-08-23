@@ -1,0 +1,59 @@
+.ptpanier:enabled {
+    width: 20vw;
+    height: 10vh;
+    margin-top: 5vh;
+    border-radius: 15px;
+    background: #485563;
+    background: -webkit-linear-gradient(to right, #29323c, #485563);
+    background: linear-gradient(to right, #29323c, #485563);
+    color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.butts button {
+    border-radius: 15px;
+    background: #485563;
+    background: -webkit-linear-gradient(to right, #29323c, #485563);
+    background: linear-gradient(to right, #29323c, #485563);
+    color: var(--primary);
+    margin-left: 3vh;
+}
+.butts{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.ptpanier:disabled{
+    width: 20vw;
+    height: 10vh;
+    margin-top: 5vh;
+    border-radius: 15px;
+    background-color: var(--primary);
+    color: var(--tercary);
+    border-color: var(--tercary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+.zones{
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    align-content: space-between;
+    margin-top: 2vh;
+}
+.zone{
+    display: flex;
+}
+label{
+    display: flex;
+    height: 3vh;
+}
+p{
+    margin-left: 2vh;
+    margin-right: 2vh;
+}

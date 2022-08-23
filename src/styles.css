@@ -1,0 +1,139 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+:root{
+    --primary:#EEEEEE;
+    --secondary:#1266f1;
+    --tercary:#3e3a3a;
+}
+body{
+    background-color:#F8EF29;
+    height: fit-content;
+    position: relative;
+}
+.header-container{
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    background-color: #A2D40E;
+}
+img{
+    margin-left: 3vw;
+}
+.icons-contain{
+margin-right: 3vw;
+display: flex;
+justify-content: space-between;
+color: var(--primary);
+width: 30vw;
+margin-top: 3vh;
+}
+.admin{
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    height: 5vh;  
+}
+.basket-comp{
+    position: absolute;
+    bottom: 40%;
+    left: 20%;
+    background-color: var(--primary);
+    color: var(--tercary);
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+}
+.span-header{
+font-size: 10px;
+}
+i{
+    height: 5vh;
+    width: 4vw;
+    
+}
+.main{
+    height: 100vh;
+    margin-top: 5vh;
+    position: relative;
+    border: 1px solid;
+    background-image: url(assets/RedDot_Burger.jpg);
+    background-size: cover;
+}
+h1{
+    position: absolute;
+    color: white;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 64px;
+}
+.p-main{
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 30px;
+    text-align: center;
+}
+.main::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.authentication{
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    height: 5vh;
+}
+.commandList{
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    height: 5vh;
+}
+.basket{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    height: 5vh;
+}
+
+.p-header{
+font-size: 10px;
+text-align: start;
+}
+.products{
+    margin-top: 5vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+}
+.product{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5vh;
+    text-align: center;
+    width: 20vw;
+}
+
+.product-image{
+    width:15vw;
+    height: 12vh;
+}
+.add-to-basket{
+    background-color: var(--secondary);
+    color: white;
+    width: 10vw;
+    height: 3vh;
+    border-radius: 5px;
+    align-self: center;
+}

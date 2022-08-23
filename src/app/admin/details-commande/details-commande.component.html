@@ -1,0 +1,16 @@
+<div class="detail-container">
+    <div class="detail-infos">
+        <h4>{{commande.etat}}</h4>
+        <h2>{{commande.date | date:'dd/mm/yyyy'}}</h2>
+    </div>
+    <h2>produits commandés</h2>
+    <div class="commanded-products" *ngFor="let ldc of ligneDeCommandes">
+        <div class="one-product">
+            <img [src]="transform(ldc.produit.photo)" alt="">
+            <h3>Nom: {{ldc.produit.nom}}</h3>
+            <h4>Prix: {{ldc.produit.prix}} FCFA</h4>
+            <h4>Quantite: {{ldc.quantite}}</h4>
+        </div>
+    </div>
+    <h2 class="text-center">prix total: {{commande.prixTotal}} FCFA</h2>
+</div>

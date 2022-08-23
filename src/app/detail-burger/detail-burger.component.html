@@ -1,0 +1,15 @@
+<div class="detail-body d-flex align-items-center">
+    <div class="detail-contain container d-flex">
+        <img [src]="transform(burger.photo)" alt="">
+        <div class="detail-infos">
+            <h2 class="text-center">Nom: {{burger.nom}}</h2>
+            <h2 class="text-center">Prix: {{burger.prix}} </h2>
+        </div>
+    </div>
+</div>
+<app-complements></app-complements>
+<h2>Autres produits de meme type</h2>
+<div class="other-products">
+    <app-produit-card *ngFor="let product of arrayProd" [produit]="product"></app-produit-card>
+</div>
+<button (click)="addToBasket(burger)" class="add container">Ajouter au panier <i class="bi bi-cart-plus"></i></button>

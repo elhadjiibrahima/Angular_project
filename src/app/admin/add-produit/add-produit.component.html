@@ -1,0 +1,50 @@
+<div class="form-page container">
+    <div class="form container f-contain">
+        <h2 class="text-center">Ajouter un produit</h2>
+        <form [formGroup]="myForm" (ngSubmit)="submit()">
+            <div class="img-contain container">
+                <label for="photo" *ngIf="!imgSrc" class="choose-img">Choisir une image <i class="bi bi-image"></i></label>
+                <img [src]="imgSrc" class="img container" *ngIf="imgSrc">
+                <label for="photo" *ngIf="imgSrc" class="modif-img">Modifier l'image <i class="bi bi-image"></i></label>
+            </div>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="nom">Nom</label>
+                <input formControlName="nom" type="text" id="nom" class="form-control" />
+            </div>
+
+            <div class="form-outline mb-4" *ngIf="!isDrink()">
+                <label class="form-label" for="prix">Prix (FCFA)</label>
+                <input type="number" formControlName="prix" id="prix" class="form-control" min="300" />
+            </div>
+            <div class="form-outline mb-4 file-input">
+                <label class="form-label" for="photo">Image</label>
+                <input id="photo" formControlName="photo" type="file" class="form-control"
+                    (change)="onFileChange($event)" />
+            </div>
+            <div class="form-outline mb-4">
+                <label for="type">Type</label>
+                <select name="" id="type" class="form-control" formControlName="type">
+                    <option value="">Choisir le type de produit</option>
+                    <option value="burger">Burger</option>
+                    <option value="boisson">Boisson</option>
+                    <option value="frites">Frites</option>
+                    <option value="menu">Menu</option>
+                </select>
+            </div>
+            <div class="productsMenu" *ngIf="isMenu()">
+                <h2>Choisir les produits qui accompagnent ce menu</h2>
+                <h3>Burgers</h3>
+                <div class="products">
+                    <app-admin-prod-card *ngFor="let burger of allBurgers" [produit]="burger"></app-admin-prod-card>
+                </div>
+                <h3>Frites</h3>
+                <div class="products ">
+                    <app-admin-prod-card *ngFor="let frites of allFrites" [produit]="frites"></app-admin-prod-card>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block mb-4">Ajouter</button>
+        </form>
+
+    </div>
+</div>

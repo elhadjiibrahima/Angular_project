@@ -1,0 +1,13 @@
+<div class="form-group mb-4 filter container">
+    <input class="form-control" type="text" [(ngModel)]="searchText" placeholder="Chercher un burger ou un menu par son nom ou son prix">
+  </div>
+<div class="container w-100">
+    <h2 class="text-center">Liste des menus</h2>
+    <div class="produits" *ngIf="(menus | filter:searchText).length>0">
+        <app-produit-card *ngFor="let produit of menus | filter:searchText" [produit]="produit" [menu]="produit"></app-produit-card>
+    </div>
+    <h2 class="text-center">Liste des burgers</h2>
+    <div class="produits" *ngIf="(burgers | filter:searchText).length>0">
+        <app-produit-card *ngFor="let produit of burgers | filter:searchText" [produit]="produit" [burger]="produit"></app-produit-card>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="oneZone" *ngIf="commandes.length!==0">
+    <div class="zone-text container">
+        <h2 (click)="seeCommande()"> {{zone.nom}} (prix livraison: {{zone.prixLivraison}} FCFA) </h2>
+        <h2 (click)="catchCommande()">X</h2>
+    </div>
+    <div class="zone-commandes" *ngIf="test">
+
+        <table class="table container">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Prix commande</th>
+                    <th scope="col">Client</th>
+                    <th scope="col">Livreur</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let commande of zone.commandes;let i=index">
+                <tr *ngIf="commande.etat=='en cours de livraison'|| commande.etat=='paye'|| commande.etat=='annule'">
+                    <td>{{i+1}}</td>
+                    <td>{{commande.prixTotal}} FCFA</td>
+                    <td>{{commande.client.phoneNumber}}</td>
+                    <td>{{commande.livraison.livreur.nomComplet}}</td>
+                    <td>{{commande.date | date:'M/d/yy, h:mm a' }}</td>
+                    <td class="butts"><button class="btn btn-success" *ngIf="commande.etat== 'en cours de livraison'" (click)="finalizeCommande(commande)">Confirmer paiement</button> <button class="btn btn-danger" *ngIf="commande.etat== 'en cours de livraison'" (click)="cancelCommande(commande)">Annuler</button> <p *ngIf="commande.etat== 'paye'">Commande payée</p> <p *ngIf="commande.etat== 'annule'">Commande annulée</p></td> 
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

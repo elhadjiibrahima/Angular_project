@@ -1,0 +1,15 @@
+.produits{
+    display: flex;
+    margin-top: 2vh;
+    height: fit-content;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+h2{
+    margin-top: 5vh;
+    color: var(--tercary);
+}
+.filter{
+    width: 40vw;
+    margin-top: 5vh;
+}

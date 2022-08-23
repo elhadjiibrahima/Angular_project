@@ -1,0 +1,19 @@
+.table{
+    width: 60vw;
+    margin-top: 20vh;
+    box-shadow: 5px 5px 5px 3px rgba( 41 , 50 , 60,.5);
+    background: #485563; 
+    background: -webkit-linear-gradient(to right, #29323c, #485563);  
+    background: linear-gradient(to right, #29323c, #485563);
+    color: var(--primary);
+}
+th{
+    border: solid 1px var(--primary);
+}
+td{
+    border: solid 1px var(--primary);
+}
+.butts{
+    display: flex;
+    justify-content: space-around;
+}

@@ -1,0 +1,55 @@
+<div class="detail-body d-flex align-items-center co">
+    <div class="detail-contain container d-flex" style="height:fit-content">
+        <div class="detail-infos" style="height: fit-content;">
+            <div>
+                <h2 class="text-center">Nom: {{menu.nom}}</h2>
+                <h2 class="text-center">Prix: {{menu.prix}} FCFA</h2>
+                <img [src]="transform(menu.photo)" alt="" class="container w-100">
+            </div>
+            <div class="products">
+
+                <h2>Burgers</h2>
+                <div *ngFor="let burger of burgers" class="product container w-100">
+                    <img [src]="transform(burger.burger.photo)">
+                    <h2 class="text-center">Nom: {{burger.burger.nom}}</h2>
+                    <h2 class="text-center">Prix: {{burger.burger.prix}} FCFA</h2>
+                    <h2 class="text-center">Quantite: {{burger.quantite}} </h2>
+                </div>
+                <h2>Frites</h2>
+                <div *ngFor="let frites of fritess" class="product container w-100">
+                    <img [src]="transform(frites.frites.photo)">
+                    <h2 class="text-center">Nom: {{frites.frites.nom}}</h2>
+                    <h2 class="text-center">Prix: {{frites.frites.prix}} FCFA</h2>
+                    <h2 class="text-center">Quantite: {{frites.quantite}} </h2>
+                </div>
+                <h2>Boissons</h2>
+                <div *ngFor="let Boisson of Boissons" class="product container w-100">
+                    <h2 class="text-center">Taille des boissons: {{Boisson.tailleBoisson.Libelle}} <br> Quantite:
+                        {{Boisson.quantite}} </h2>
+                    <div *ngFor="let varieteTaille of Boisson.tailleBoisson.varieteTailles"
+                        class="product boissons container w-100">
+                        <img [src]="transform(varieteTaille.boisson.photo)" alt="">
+                        <h2 class="text-center" id="boisson">Nom: {{varieteTaille.boisson.nom}}</h2>
+                        <h2 class="text-center">Prix: {{varieteTaille.prix}} FCFA</h2>
+                        <button class="btn btn-link px-2"
+                            onclick="this.parentNode.querySelector('input[type=number]').stepDown();"
+                            style="color: var(--primary);" (click)="moinsQ(q.value)" *ngIf="+q.value>0">
+                            <i class="bi bi-dash-circle-fill"></i>
+                        </button>
+                        <input type="number" readonly #q id="" value="0" class="numb container">
+                        <button class="btn btn-link px-2"
+                            onclick="this.parentNode.querySelector('input[type=number]').stepUp();"
+                            style="color: var(--primary);" (click)="plusQ(q.value,Boisson.quantite)"
+                            *ngIf="+q.value<Boisson.quantite">
+                            <i class="bi bi-plus-circle-fill"></i>
+                        </button>
+                    </div>
+                    <app-complements></app-complements>
+                    <h2>Autres produits de meme type</h2>
+                    <div class="other-products">
+                        <app-produit-card *ngFor="let product of arrayProd" [produit]="product"></app-produit-card>
+                    </div>
+                </div>
+                <button (click)="addToBasket(menu)" class="add container" *ngIf="completeMenu(cpt,totalBoissons(Boissons))">Ajouter au panier <i class="bi bi-cart-plus"></i></button>
+            </div>
+        </div>

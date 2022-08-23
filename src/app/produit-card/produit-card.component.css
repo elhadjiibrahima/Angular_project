@@ -1,0 +1,40 @@
+.add{
+    color: var(--primary);
+    border-radius: 15px;
+    background: #485563;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #29323c, #485563);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #29323c, #485563); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+img{
+    width: 15vw;
+    height: 18vh;
+    margin-right: 50px;
+    margin-top: 30px;
+}
+
+
+.card{
+    width: fit-content;
+    height: fit-content;
+    color: var(--primary);
+    background: #485563;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #29323c, #485563);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #29323c, #485563); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+.produit{
+    width: fit-content;
+}
+.buttons{
+    margin-top: .8vh;
+    display: flex;
+    justify-content: space-between;
+}
+.details{
+    background: #485563;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #29323c, #485563);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #29323c, #485563); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: var(--primary);
+    border: 2px solid var(--tercary);
+    border-radius: 15px;
+}

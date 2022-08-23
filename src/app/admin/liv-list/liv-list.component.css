@@ -1,0 +1,40 @@
+h2{
+    cursor: pointer;
+    margin-top: 5vh;
+}
+h2:hover{
+    color: crimson;
+}
+.zone-text{
+    display: flex;
+    justify-content: space-between;
+    width: 30vw;
+}
+.delivery{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+    margin-top: 1vh;
+}
+.livreurs{
+    display: flex;
+    margin-top: 2vh;
+}
+.livreur{
+    display: flex;
+    width: 10vw;
+}
+.liv{
+    display: flex;
+    justify-content: space-between;
+}
+.butts{
+    display: flex;
+    justify-content: space-between;
+}
+table{
+    background: #485563;  
+    background: -webkit-linear-gradient(to right, #29323c, #485563);  
+    background: linear-gradient(to right, #29323c, #485563);
+    color: var(--primary);
+}
